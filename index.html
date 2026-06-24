@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pooja H | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020617;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3B82F6;
+    border-radius:20px;
+}
+
+/* Navbar */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(2,6,23,.85);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#60A5FA;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#60A5FA;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    padding:120px 8%;
+    flex-wrap:wrap;
+    background:
+    radial-gradient(circle at top left,#1E3A8A,transparent 40%),
+    radial-gradient(circle at bottom right,#2563EB,transparent 30%),
+    #020617;
+}
+
+.profile-card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.1);
+    padding:20px;
+    border-radius:30px;
+    box-shadow:0 0 50px rgba(59,130,246,.25);
+}
+
+.profile-card img{
+    width:350px;
+    border-radius:20px;
+    display:block;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero-content h3{
+    color:#60A5FA;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.hero-content h1{
+    font-size:65px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.hero-content span{
+    color:#60A5FA;
+}
+
+.hero-content h2{
+    color:#CBD5E1;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:#94A3B8;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.btns{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:10px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.primary{
+    background:#3B82F6;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+}
+
+.secondary{
+    border:1px solid #3B82F6;
+    color:#3B82F6;
+}
+
+.secondary:hover{
+    background:#3B82F6;
+    color:white;
+}
+
+/* Sections */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    color:#60A5FA;
+    margin-bottom:60px;
+}
+
+/* About */
+
+.about{
+    background:#0F172A;
+}
+
+.about-card{
+    background:rgba(255,255,255,.04);
+    padding:40px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.about-card p{
+    line-height:2;
+    color:#CBD5E1;
+}
+
+/* Skills */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skill{
+    background:#0F172A;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    transition:.4s;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(59,130,246,.3);
+}
+
+.skill h3{
+    color:#60A5FA;
+    margin-bottom:10px;
+}
+
+/* Education */
+
+.education{
+    background:#0F172A;
+}
+
+.edu-card{
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,.04);
+    padding:40px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.edu-card h3{
+    color:#60A5FA;
+    margin-bottom:10px;
+}
+
+.edu-card p{
+    color:#CBD5E1;
+}
+
+/* Social */
+
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.social-card{
+    background:#0F172A;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.social-card:hover{
+    transform:translateY(-8px);
+}
+
+.social-card a{
+    color:#60A5FA;
+    text-decoration:none;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#94A3B8;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:45px;
+}
+
+.profile-card img{
+    width:100%;
+    max-width:320px;
+}
+
+nav ul{
+    gap:15px;
+    font-size:14px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Pooja H</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#social">Connect</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <div class="profile-card">
+        <!-- Replace image path with your image -->
+        <img src="pooja.jpg.jpeg" alt="Pooja H">
+    </div>
+
+    <div class="hero-content">
+
+        <h3>WELCOME TO MY PORTFOLIO</h3>
+
+        <h1>
+            Hi, I'm <span>Pooja H</span>
+        </h1>
+
+        <h2>
+            Aspiring Project Manager & Data Analyst
+        </h2>
+
+        <p>
+            Passionate BCA (Hons) student with a strong interest in
+            Project Management, Data Analytics, Web Technologies,
+            Python, and MySQL. I enjoy building digital solutions,
+            analyzing data, solving real-world problems, and learning
+            emerging technologies.
+        </p>
+
+        <div class="btns">
+            <a href="https://github.com/poojah24" target="_blank" class="btn primary">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/poojah2006" target="_blank" class="btn secondary">
+                LinkedIn
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about" class="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-card">
+
+        <p>
+            I am Pooja H, a dedicated BCA (Hons) student passionate about
+            technology, analytics, and leadership. My interests lie in
+            Project Management, Data Analysis, Web Development, Python,
+            and Database Management using MySQL.
+
+            I believe in continuous learning, collaboration, and
+            creating meaningful solutions through technology.
+            My goal is to bridge the gap between business needs
+            and technology-driven innovation.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <h3>Project Management</h3>
+            <p>Planning, organizing and managing projects efficiently.</p>
+        </div>
+
+        <div class="skill">
+            <h3>Data Analytics</h3>
+            <p>Analyzing and interpreting data for better decisions.</p>
+        </div>
+
+        <div class="skill">
+            <h3>Python</h3>
+            <p>Programming and automation using Python.</p>
+        </div>
+
+        <div class="skill">
+            <h3>MySQL</h3>
+            <p>Database design and management.</p>
+        </div>
+
+        <div class="skill">
+            <h3>Web Technologies</h3>
+            <p>Creating responsive and modern websites.</p>
+        </div>
+
+        <div class="skill">
+            <h3>Problem Solving</h3>
+            <p>Finding practical and innovative solutions.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="education" class="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-card">
+
+        <h3>Bachelor of Computer Applications (Hons)</h3>
+
+        <p>
+            Currently pursuing BCA (Hons) with focus on:
+        </p>
+
+        <br>
+
+        <p>
+            ✔ Data Analytics <br>
+            ✔ Python Programming <br>
+            ✔ Database Management Systems <br>
+            ✔ Web Technologies <br>
+            ✔ Software Development Fundamentals
+        </p>
+
+    </div>
+
+</section>
+
+<section id="social">
+
+    <h2 class="section-title">Connect With Me</h2>
+
+    <div class="social-grid">
+
+        <div class="social-card">
+            <h3>GitHub</h3>
+            <br>
+            <a href="https://github.com/poojah24" target="_blank">
+                github.com/poojah24
+            </a>
+        </div>
+
+        <div class="social-card">
+            <h3>LinkedIn</h3>
+            <br>
+            <a href="https://www.linkedin.com/in/poojah2006" target="_blank">
+                linkedin.com/in/poojah2006
+            </a>
+        </div>
+
+        <div class="social-card">
+            <h3>Instagram</h3>
+            <br>
+            <a href="https://www.instagram.com/the__i__conic/" target="_blank">
+                @the__i__conic
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Pooja H • Aspiring Project Manager & Data Analyst
+</footer>
+
+</body>
+</html>
